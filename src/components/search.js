@@ -23,7 +23,6 @@ class Search extends React.Component {
               <option value="FIREARM">Firearm</option>
               <option value="HOMICIDE">Homicide</option>
               <option value="INDIVIDUAL ROBBERY">Individual Robbery</option>
-              <option value="JUVENILE">Juvenile</option>
               <option value="NARCOTICS">Narcotics</option>
               <option value="NON-RESIDENTIAL BURGLARY">Non-Residential Burglary</option>
               <option value="NUISANCE">Nuisance</option>

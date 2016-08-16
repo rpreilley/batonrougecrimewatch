@@ -21490,6 +21490,15 @@
 	
 	    _this.state = {
 	      coords: [],
+	      file_number: [],
+	      offense_date: [],
+	      offense_time: [],
+	      crime: [],
+	      a_c: [],
+	      offense: [],
+	      offense_desc: [],
+	      address: [],
+	      complete_district: [],
 	      defaultLat: 30.4583,
 	      defaultLng: -91.1403,
 	      zoom: 12
@@ -21506,18 +21515,41 @@
 	        return response.json();
 	      }).then(function (results) {
 	        var coords = [];
-	        // The console.log below is working and returns all of the results
-	        // console.log(results);
+	        var file_number = [];
+	        var offense_date = [];
+	        var offense_time = [];
+	        var crime = [];
+	        var a_c = [];
+	        var offense = [];
+	        var offense_desc = [];
+	        var address = [];
+	        var complete_district = [];
+	
 	        results.forEach(function (result) {
-	          // A debugger here will trigger and if I type in crimeType it knows what the value is from the dropdown menu
 	          if (result.crime == crimeType && result.offense_date.includes("2016") && result.geolocation) {
-	            // I am trying to get it to hit this part and console.log the results based off of the crimeType from the dropdown menu //
-	            // It is not getting to the step below
 	            coords.push(result.geolocation.coordinates);
+	            file_number.push(result.file_number);
+	            offense_date.push(result.offense_date);
+	            offense_time.push(result.offense_time);
+	            crime.push(result.crime);
+	            a_c.push(result.a_c);
+	            offense.push(result.offense);
+	            offense_desc.push(result.offense_desc);
+	            address.push(result.address);
+	            complete_district.push(result.complete_district);
 	          }
 	        });
 	        _this2.setState({
-	          coords: coords
+	          coords: coords,
+	          file_number: file_number,
+	          offense_date: offense_date,
+	          offense_time: offense_time,
+	          crime: crime,
+	          a_c: a_c,
+	          offense: offense,
+	          offense_desc: offense_desc,
+	          address: address,
+	          complete_district: complete_district
 	        });
 	      }).catch(function (ex) {
 	        console.log('parsing failed', ex);
@@ -21538,7 +21570,7 @@
 	        _react2.default.createElement(_search2.default, { search: this._fetchCrime.bind(this), clear: this._clearDisplays.bind(this) }),
 	        _react2.default.createElement(_map2.default, { zoom: this.state.zoom, defaultLat: this.state.defaultLat, defaultLng: this.state.defaultLng, coords: this.state.coords }),
 	        _react2.default.createElement(_list2.default, null),
-	        _react2.default.createElement(_listItem2.default, { display: this.state.displayListItems })
+	        _react2.default.createElement(_listItem2.default, { file_number: this.state.file_number })
 	      );
 	    }
 	  }]);
@@ -21642,12 +21674,6 @@
 	              "option",
 	              { value: "INDIVIDUAL ROBBERY" },
 	              "Individual Robbery"
-	            ),
-	            "        ",
-	            _react2.default.createElement(
-	              "option",
-	              { value: "JUVENILE" },
-	              "Juvenile"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
@@ -21758,16 +21784,8 @@
 	    key: 'render',
 	    value: function render() {
 	      if (this.props.coords) {
-	        // let Marker = [];
-	        for (var i = 0; i < this.props.coords.length; i++) {
-	          // Marker.push(this.props.coords[i]);
-	          console.log(this.props.coords[i][1]);
-	          // This console log is logging a bunch of arrays each with 2 index points, lat and lng
-	          // I want to place a marker for each one as it is iterating through the for loop
-	        }
+	        for (var i = 0; i < this.props.coords.length; i++) {}
 	      }
-	      // The Marker that is hard coded below is rendering on the map.
-	      // Need to figure out how to take iteration of lat lng's above and put a marker for each of them so it is not hard coded
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'map' },
@@ -24565,7 +24583,9 @@
 	
 	  _createClass(Marker, [{
 	    key: "_handleClick",
-	    value: function _handleClick(event) {}
+	    value: function _handleClick(event) {
+	      debugger;
+	    }
 	  }, {
 	    key: "render",
 	    value: function render() {
@@ -24643,7 +24663,7 @@
 /* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -24673,9 +24693,26 @@
 	  }
 	
 	  _createClass(ListItem, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
-	      return _react2.default.createElement('ul', null);
+	      return _react2.default.createElement(
+	        "ul",
+	        null,
+	        this.props.file_number.map(function (file_number, i) {
+	          return;
+	          _react2.default.createElement(
+	            "div",
+	            { className: "eventBar" },
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              file_number,
+	              " key=",
+	              i
+	            )
+	          );
+	        })
+	      );
 	    }
 	  }]);
 	

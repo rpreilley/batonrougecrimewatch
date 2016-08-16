@@ -6,7 +6,7 @@ class Marker extends React.Component {
     super(props);
   }
   _handleClick(event){
-
+    debugger
   }
   render(){
     return(
