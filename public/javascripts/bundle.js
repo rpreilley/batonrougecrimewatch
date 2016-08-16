@@ -21499,18 +21499,21 @@
 	
 	  _createClass(Main, [{
 	    key: '_fetchCrime',
-	    value: function _fetchCrime(crimeType) {}
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
+	    value: function _fetchCrime(crimeType) {
 	      var _this2 = this;
 	
 	      fetch('https://data.brla.gov/resource/5rji-ddnu.json').then(function (response) {
 	        return response.json();
 	      }).then(function (results) {
 	        var coords = [];
+	        // The console.log below is working and returns all of the results
+	        console.log(results);
 	        results.forEach(function (result) {
-	          if (result.crime == "HOMICIDE" && result.geolocation) {
+	          // A debugger here will trigger and if I type in crimeType it knows what the value is from the dropdown menu
+	          if (result.crime == crimeType && result.geolocation) {
+	            // I am trying to get it to hit this part and console.log the results based off of the crimeType from the dropdown menu //
+	            // It is not getting to the step below and console logging all of the results for that specific crime type
+	            console.log(result);
 	            coords.push(result.geolocation.coordinates);
 	          }
 	        });
@@ -21522,13 +21525,17 @@
 	      });
 	    }
 	  }, {
+	    key: '_clearDisplays',
+	    value: function _clearDisplays() {
+	      this.setState({ displayListItems: [] });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'mapContainer' },
-	        _react2.default.createElement(DropDown, null),
-	        _react2.default.createElement(_search2.default, null),
+	        _react2.default.createElement(_search2.default, { search: this._fetchCrime.bind(this), clear: this._clearDisplays.bind(this) }),
 	        _react2.default.createElement(_map2.default, { zoom: this.state.zoom, defaultLat: this.state.defaultLat, defaultLng: this.state.defaultLng, coords: this.state.coords }),
 	        _react2.default.createElement(_list2.default, null),
 	        _react2.default.createElement(_listItem2.default, { display: this.state.displayListItems })
@@ -21578,17 +21585,125 @@
 	    key: "_handleSearch",
 	    value: function _handleSearch(event) {
 	      event.preventDefault();
-	      this.props.search(this.refs.Search.value);
+	      this.props.search(this.refs.chosenCrime.value);
 	      this.props.clear();
 	    }
 	  }, {
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "form",
-	        { onSubmit: this._handleSearch.bind(this) },
-	        _react2.default.createElement("input", { type: "search", ref: "Search" }),
-	        _react2.default.createElement("input", { type: "submit", value: "Search" })
+	        "div",
+	        { className: "searchSection" },
+	        _react2.default.createElement(
+	          "div",
+	          null,
+	          "      ",
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "Type of Crime "
+	          ),
+	          "        ",
+	          _react2.default.createElement(
+	            "select",
+	            { ref: "chosenCrime", defaultValue: 0 },
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Assault" },
+	              "Assault"
+	            ),
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Battery" },
+	              "Battery"
+	            ),
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Criminal Damage to Property" },
+	              "Criminal Damage to Property"
+	            ),
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Firearm" },
+	              "Firearm"
+	            ),
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Homicide" },
+	              "Homicide"
+	            ),
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Individual Robbery" },
+	              "Individual Robbery"
+	            ),
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Juvenile" },
+	              "Juvenile"
+	            ),
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Narcotics" },
+	              "Narcotics"
+	            ),
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Non-Residential Burglary" },
+	              "Non-Residential Burglary"
+	            ),
+	            "        ",
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Nuisance" },
+	              "Nuisance"
+	            ),
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Residential Burglary" },
+	              "Residential Burglary"
+	            ),
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Theft" },
+	              "Theft"
+	            ),
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Vehicle Burglary" },
+	              "Vehicle Burglary"
+	            ),
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Vice" },
+	              "Vice"
+	            ),
+	            _react2.default.createElement(
+	              "option",
+	              { value: "Other" },
+	              "Other"
+	            ),
+	            "        "
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "search" },
+	          _react2.default.createElement(
+	            "form",
+	            { onSubmit: this._handleSearch.bind(this) },
+	            _react2.default.createElement("input", { type: "submit", value: "Search", className: "searchButton" })
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -21644,19 +21759,15 @@
 	    value: function render() {
 	      if (this.props.coords) {
 	        for (var i = 0; i < this.props.coords.length; i++) {
-	          console.log(this.props.coords[i]);
+	          // console.log(this.props.coords[i]);
 	        }
 	      }
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'map' },
-	        _react2.default.createElement(
-	          _googleMapReact2.default,
-	          {
-	            zoom: this.props.zoom,
-	            center: { lat: this.props.defaultLat, lng: this.props.defaultLng } },
-	          _react2.default.createElement(_marker2.default, { className: 'marker' })
-	        )
+	        _react2.default.createElement(_googleMapReact2.default, {
+	          zoom: this.props.zoom,
+	          center: { lat: this.props.defaultLat, lng: this.props.defaultLng } })
 	      );
 	    }
 	  }]);

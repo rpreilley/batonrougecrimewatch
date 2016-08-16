@@ -8,7 +8,7 @@ class RenderMap extends React.Component {
   render(){
     if (this.props.coords) {
       for (var i = 0; i < this.props.coords.length; i++) {
-        console.log(this.props.coords[i]);
+        // console.log(this.props.coords[i]);
       }
     }
     return(
@@ -16,7 +16,6 @@ class RenderMap extends React.Component {
       <GoogleMap
         zoom={this.props.zoom}
         center={ {lat: this.props.defaultLat, lng: this.props.defaultLng} }>
-        <Marker className="marker"></Marker>
       </GoogleMap>
     </div>
   )

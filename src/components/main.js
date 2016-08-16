@@ -15,17 +15,20 @@ class Main extends React.Component {
     }
   }
   _fetchCrime(crimeType) {
-
-  }
-  componentDidMount() {
     fetch(`https://data.brla.gov/resource/5rji-ddnu.json`)
       .then((response) => {
         return response.json()
       })
       .then((results) => {
         let coords = [];
+        // The console.log below is working and returns all of the results
+        console.log(results);
         results.forEach(function(result) {
-          if (result.crime == "HOMICIDE" && result.geolocation) {
+          // A debugger here will trigger and if I type in crimeType it knows what the value is from the dropdown menu
+          if (result.crime == crimeType && result.geolocation) {
+            // I am trying to get it to hit this part and console.log the results based off of the crimeType from the dropdown menu //
+            // It is not getting to the step below and console logging all of the results for that specific crime type
+            console.log(result);
             coords.push(result.geolocation.coordinates);
           }
         })
@@ -37,11 +40,13 @@ class Main extends React.Component {
         console.log('parsing failed', ex)
       })
   }
+  _clearDisplays(){
+    this.setState({displayListItems: []});
+  }
   render(){
     return(
       <div className="mapContainer">
-        <DropDown />
-        <Search />
+        <Search search={this._fetchCrime.bind(this)} clear={this._clearDisplays.bind(this)}/>
         <RenderMap zoom={this.state.zoom} defaultLat={this.state.defaultLat} defaultLng={this.state.defaultLng} coords={this.state.coords}  />
         <List />
         <ListItem display={this.state.displayListItems} />
