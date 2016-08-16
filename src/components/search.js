@@ -17,21 +17,21 @@ class Search extends React.Component {
         <div>
           <p>Type of Crime </p>
             <select ref="chosenCrime" defaultValue={0}>
-              <option value="Assault">Assault</option>
-              <option value="Battery">Battery</option>
-              <option value="Criminal Damage to Property">Criminal Damage to Property</option>
-              <option value="Firearm">Firearm</option>
-              <option value="Homicide">Homicide</option>
-              <option value="Individual Robbery">Individual Robbery</option>
-              <option value="Juvenile">Juvenile</option>
-              <option value="Narcotics">Narcotics</option>
-              <option value="Non-Residential Burglary">Non-Residential Burglary</option>
-              <option value="Nuisance">Nuisance</option>
-              <option value="Residential Burglary">Residential Burglary</option>
-              <option value="Theft">Theft</option>
-              <option value="Vehicle Burglary">Vehicle Burglary</option>
-              <option value="Vice">Vice</option>
-              <option value="Other">Other</option>
+              <option value="ASSAULT">Assault</option>
+              <option value="BATTERY">Battery</option>
+              <option value="CRIMINAL DAMAGE TO PROPERTY">Criminal Damage to Property</option>
+              <option value="FIREARM">Firearm</option>
+              <option value="HOMICIDE">Homicide</option>
+              <option value="INDIVIDUAL ROBBERY">Individual Robbery</option>
+              <option value="JUVENILE">Juvenile</option>
+              <option value="NARCOTICS">Narcotics</option>
+              <option value="NON-RESIDENTIAL BURGLARY">Non-Residential Burglary</option>
+              <option value="NUISANCE">Nuisance</option>
+              <option value="RESIDENTIAL BURGLARY">Residential Burglary</option>
+              <option value="THEFT">Theft</option>
+              <option value="VEHICLE BURGLARY">Vehicle Burglary</option>
+              <option value="VICE">Vice</option>
+              <option value="OTHER">Other</option>
             </select>
         </div>
         <div className="search">

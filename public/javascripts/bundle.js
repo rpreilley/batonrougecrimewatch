@@ -21507,13 +21507,12 @@
 	      }).then(function (results) {
 	        var coords = [];
 	        // The console.log below is working and returns all of the results
-	        console.log(results);
+	        // console.log(results);
 	        results.forEach(function (result) {
 	          // A debugger here will trigger and if I type in crimeType it knows what the value is from the dropdown menu
 	          if (result.crime == crimeType && result.geolocation) {
 	            // I am trying to get it to hit this part and console.log the results based off of the crimeType from the dropdown menu //
-	            // It is not getting to the step below and console logging all of the results for that specific crime type
-	            console.log(result);
+	            // It is not getting to the step below
 	            coords.push(result.geolocation.coordinates);
 	          }
 	        });
@@ -21528,6 +21527,7 @@
 	    key: '_clearDisplays',
 	    value: function _clearDisplays() {
 	      this.setState({ displayListItems: [] });
+	      this.setState({ coords: [] });
 	    }
 	  }, {
 	    key: 'render',
@@ -21610,86 +21610,86 @@
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Assault" },
+	              { value: "ASSAULT" },
 	              "Assault"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Battery" },
+	              { value: "BATTERY" },
 	              "Battery"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Criminal Damage to Property" },
+	              { value: "CRIMINAL DAMAGE TO PROPERTY" },
 	              "Criminal Damage to Property"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Firearm" },
+	              { value: "FIREARM" },
 	              "Firearm"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Homicide" },
+	              { value: "HOMICIDE" },
 	              "Homicide"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Individual Robbery" },
+	              { value: "INDIVIDUAL ROBBERY" },
 	              "Individual Robbery"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Juvenile" },
+	              { value: "JUVENILE" },
 	              "Juvenile"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Narcotics" },
+	              { value: "NARCOTICS" },
 	              "Narcotics"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Non-Residential Burglary" },
+	              { value: "NON-RESIDENTIAL BURGLARY" },
 	              "Non-Residential Burglary"
 	            ),
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Nuisance" },
+	              { value: "NUISANCE" },
 	              "Nuisance"
 	            ),
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Residential Burglary" },
+	              { value: "RESIDENTIAL BURGLARY" },
 	              "Residential Burglary"
 	            ),
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Theft" },
+	              { value: "THEFT" },
 	              "Theft"
 	            ),
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Vehicle Burglary" },
+	              { value: "VEHICLE BURGLARY" },
 	              "Vehicle Burglary"
 	            ),
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Vice" },
+	              { value: "VICE" },
 	              "Vice"
 	            ),
 	            _react2.default.createElement(
 	              "option",
-	              { value: "Other" },
+	              { value: "OTHER" },
 	              "Other"
 	            ),
 	            "        "
@@ -21758,16 +21758,25 @@
 	    key: 'render',
 	    value: function render() {
 	      if (this.props.coords) {
+	        // let Marker = [];
 	        for (var i = 0; i < this.props.coords.length; i++) {
-	          // console.log(this.props.coords[i]);
+	          // Marker.push(this.props.coords[i]);
+	          console.log(this.props.coords[i]);
+	          // This console log is logging arrays each with 2 index points, lat and lng
+	          // I want to place a marker for each one as it is iterating through the for loop
 	        }
 	      }
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'map' },
-	        _react2.default.createElement(_googleMapReact2.default, {
-	          zoom: this.props.zoom,
-	          center: { lat: this.props.defaultLat, lng: this.props.defaultLng } })
+	        _react2.default.createElement(
+	          _googleMapReact2.default,
+	          {
+	            zoom: this.props.zoom,
+	            center: { lat: this.props.defaultLat, lng: this.props.defaultLng } },
+	          _react2.default.createElement(_marker2.default, { lat: 30.51542, lng: -91.162719 }),
+	          _marker2.default
+	        )
 	      );
 	    }
 	  }]);

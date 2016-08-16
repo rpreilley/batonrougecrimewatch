@@ -22,13 +22,12 @@ class Main extends React.Component {
       .then((results) => {
         let coords = [];
         // The console.log below is working and returns all of the results
-        console.log(results);
+        // console.log(results);
         results.forEach(function(result) {
           // A debugger here will trigger and if I type in crimeType it knows what the value is from the dropdown menu
           if (result.crime == crimeType && result.geolocation) {
             // I am trying to get it to hit this part and console.log the results based off of the crimeType from the dropdown menu //
-            // It is not getting to the step below and console logging all of the results for that specific crime type
-            console.log(result);
+            // It is not getting to the step below
             coords.push(result.geolocation.coordinates);
           }
         })
@@ -42,6 +41,7 @@ class Main extends React.Component {
   }
   _clearDisplays(){
     this.setState({displayListItems: []});
+    this.setState({coords: []});
   }
   render(){
     return(
