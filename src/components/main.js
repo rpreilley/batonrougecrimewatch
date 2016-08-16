@@ -11,7 +11,7 @@ class Main extends React.Component {
       coords: [],
       defaultLat: 30.4583,
       defaultLng: -91.1403,
-      zoom: 10
+      zoom: 12
     }
   }
   _fetchCrime(crimeType) {
@@ -25,7 +25,7 @@ class Main extends React.Component {
         // console.log(results);
         results.forEach(function(result) {
           // A debugger here will trigger and if I type in crimeType it knows what the value is from the dropdown menu
-          if (result.crime == crimeType && result.geolocation) {
+          if (result.crime == crimeType && result.offense_date.includes("2016") && result.geolocation) {
             // I am trying to get it to hit this part and console.log the results based off of the crimeType from the dropdown menu //
             // It is not getting to the step below
             coords.push(result.geolocation.coordinates);

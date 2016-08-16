@@ -21492,7 +21492,7 @@
 	      coords: [],
 	      defaultLat: 30.4583,
 	      defaultLng: -91.1403,
-	      zoom: 10
+	      zoom: 12
 	    };
 	    return _this;
 	  }
@@ -21510,7 +21510,7 @@
 	        // console.log(results);
 	        results.forEach(function (result) {
 	          // A debugger here will trigger and if I type in crimeType it knows what the value is from the dropdown menu
-	          if (result.crime == crimeType && result.geolocation) {
+	          if (result.crime == crimeType && result.offense_date.includes("2016") && result.geolocation) {
 	            // I am trying to get it to hit this part and console.log the results based off of the crimeType from the dropdown menu //
 	            // It is not getting to the step below
 	            coords.push(result.geolocation.coordinates);
@@ -21761,11 +21761,13 @@
 	        // let Marker = [];
 	        for (var i = 0; i < this.props.coords.length; i++) {
 	          // Marker.push(this.props.coords[i]);
-	          console.log(this.props.coords[i]);
-	          // This console log is logging arrays each with 2 index points, lat and lng
+	          console.log(this.props.coords[i][1]);
+	          // This console log is logging a bunch of arrays each with 2 index points, lat and lng
 	          // I want to place a marker for each one as it is iterating through the for loop
 	        }
 	      }
+	      // The Marker that is hard coded below is rendering on the map.
+	      // Need to figure out how to take iteration of lat lng's above and put a marker for each of them so it is not hard coded
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'map' },
@@ -21774,8 +21776,9 @@
 	          {
 	            zoom: this.props.zoom,
 	            center: { lat: this.props.defaultLat, lng: this.props.defaultLng } },
-	          _react2.default.createElement(_marker2.default, { lat: 30.51542, lng: -91.162719 }),
-	          _marker2.default
+	          this.props.coords.map(function (coordsArray, i) {
+	            return _react2.default.createElement(_marker2.default, { lat: coordsArray[1], lng: coordsArray[0], key: i });
+	          })
 	        )
 	      );
 	    }
@@ -24569,7 +24572,7 @@
 	      return _react2.default.createElement(
 	        "div",
 	        null,
-	        _react2.default.createElement("i", { onClick: this._handleClick.bind(this), className: "fa fa-map-marker fa-2x", "aria-hidden": "true" })
+	        _react2.default.createElement("i", { onClick: this._handleClick.bind(this), className: "fa fa-map-marker fa", "aria-hidden": "true" })
 	      );
 	    }
 	  }]);
