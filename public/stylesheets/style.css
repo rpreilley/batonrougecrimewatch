@@ -30,23 +30,12 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #map {
-  height: 400px;
-  width: 45%;
-  border-color: black;
-  border-radius: 2px;
-  border-width: 2px;
-  border-style: solid;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-}
-
-#list {
-  height: 400px;
-  width: 45%;
+  height: 600px;
+  width: 90%;
   border-color: black;
   border-radius: 2px;
   border-width: 2px;
@@ -71,4 +60,17 @@ width: 20px;
 
 .fa:hover {
   color: red;
+}
+
+.list {
+  float: right;
+  height: 400px;
+  width: 45%;
+  text-align: center;
+  border-color: black;
+  border-radius: 2px;
+  border-width: 2px;
+  border-style: solid;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
 }

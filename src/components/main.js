@@ -75,13 +75,17 @@ class Main extends React.Component {
     this.setState({displayListItems: []});
     this.setState({coords: []});
   }
+  _addToList(){
+    console.log("firing off");
+    this.setState({file_number: file_number})
+  }
   render(){
     return(
       <div className="mapContainer">
         <Search search={this._fetchCrime.bind(this)} clear={this._clearDisplays.bind(this)}/>
-        <RenderMap zoom={this.state.zoom} defaultLat={this.state.defaultLat} defaultLng={this.state.defaultLng} coords={this.state.coords}  />
+        <RenderMap zoom={this.state.zoom} defaultLat={this.state.defaultLat} defaultLng={this.state.defaultLng} addTest={this._addToList.bind(this)} coords={this.state.coords} />
         <List />
-        <ListItem file_number={this.state.file_number} />
+        <ListItem list={this.state.file_number} />
       </div>
     );
   }

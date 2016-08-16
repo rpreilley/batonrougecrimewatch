@@ -10,7 +10,7 @@ class List extends React.Component {
 
   render(){
     return(
-      <div id="list">
+      <div className="list">
         <h3> Events </h3>
       </div>
     );

@@ -21562,15 +21562,21 @@
 	      this.setState({ coords: [] });
 	    }
 	  }, {
+	    key: '_addToList',
+	    value: function _addToList() {
+	      console.log("firing off");
+	      this.setState({ file_number: file_number });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'mapContainer' },
 	        _react2.default.createElement(_search2.default, { search: this._fetchCrime.bind(this), clear: this._clearDisplays.bind(this) }),
-	        _react2.default.createElement(_map2.default, { zoom: this.state.zoom, defaultLat: this.state.defaultLat, defaultLng: this.state.defaultLng, coords: this.state.coords }),
+	        _react2.default.createElement(_map2.default, { zoom: this.state.zoom, defaultLat: this.state.defaultLat, defaultLng: this.state.defaultLng, addTest: this._addToList.bind(this), coords: this.state.coords }),
 	        _react2.default.createElement(_list2.default, null),
-	        _react2.default.createElement(_listItem2.default, { file_number: this.state.file_number })
+	        _react2.default.createElement(_listItem2.default, { list: this.state.file_number })
 	      );
 	    }
 	  }]);
@@ -21783,6 +21789,8 @@
 	  _createClass(RenderMap, [{
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+	
 	      if (this.props.coords) {
 	        for (var i = 0; i < this.props.coords.length; i++) {}
 	      }
@@ -21795,7 +21803,7 @@
 	            zoom: this.props.zoom,
 	            center: { lat: this.props.defaultLat, lng: this.props.defaultLng } },
 	          this.props.coords.map(function (coordsArray, i) {
-	            return _react2.default.createElement(_marker2.default, { lat: coordsArray[1], lng: coordsArray[0], key: i });
+	            return _react2.default.createElement(_marker2.default, { lat: coordsArray[1], lng: coordsArray[0], addTest: _this2.props.addTest.bind(_this2), key: i });
 	          })
 	        )
 	      );
@@ -24585,6 +24593,7 @@
 	    key: "_handleClick",
 	    value: function _handleClick(event) {
 	      debugger;
+	      this.props.addTest(this.props.file_number);
 	    }
 	  }, {
 	    key: "render",
@@ -24644,7 +24653,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { id: 'list' },
+	        { className: 'list' },
 	        _react2.default.createElement(
 	          'h3',
 	          null,
@@ -24696,19 +24705,16 @@
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "ul",
+	        "div",
 	        null,
-	        this.props.file_number.map(function (file_number, i) {
-	          return;
-	          _react2.default.createElement(
+	        this.props.list.map(function (listValue, j) {
+	          return _react2.default.createElement(
 	            "div",
-	            { className: "eventBar" },
+	            { className: "eventBar", key: j },
 	            _react2.default.createElement(
 	              "li",
 	              null,
-	              file_number,
-	              " key=",
-	              i
+	              listValue
 	            )
 	          );
 	        })

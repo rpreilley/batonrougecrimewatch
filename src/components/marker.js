@@ -7,6 +7,7 @@ class Marker extends React.Component {
   }
   _handleClick(event){
     debugger
+    this.props.addTest(this.props.file_number);
   }
   render(){
     return(

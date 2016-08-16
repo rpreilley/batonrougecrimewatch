@@ -15,7 +15,7 @@ class RenderMap extends React.Component {
       <GoogleMap
         zoom={this.props.zoom}
         center={ {lat: this.props.defaultLat, lng: this.props.defaultLng} }>
-        { this.props.coords.map((coordsArray, i) => <Marker lat={coordsArray[1]} lng={coordsArray[0]} key={i}></Marker>) }
+        { this.props.coords.map((coordsArray, i) => <Marker lat={coordsArray[1]} lng={coordsArray[0]} addTest={this.props.addTest.bind(this)} key={i}></Marker>) }
       </GoogleMap>
     </div>
   )
