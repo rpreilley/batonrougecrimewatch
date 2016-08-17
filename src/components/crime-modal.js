@@ -8,16 +8,11 @@ class CrimeModal extends React.Component {
   close() {
     this.props.onHide();
   }
-
   render() {
-    // The above console.log shows the crime object that has a geolocation with a coordinates key with the lat and lng at index positions 0 and 1.
-
-    // In the blank space of the h4 elements, I put { this.props.crime ? this.props.crime.geolocation.coordinates[0] : ""} to print out the lng but throwing an error.
-    // If its showing in the console log above why wont it print out in the modal??
     return (
       <Modal show={this.props.showModal} onHide={this.close.bind(this)}>
           <Modal.Header closeButton>
-            <Modal.Title>Crime Information</Modal.Title>
+            <Modal.Title className="modalBody">Crime Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <h4>Crime Type: {this.props.crime ? this.props.crime.crime : ""}</h4>
@@ -33,8 +28,6 @@ class CrimeModal extends React.Component {
             <h4>Offense: {this.props.crime ? this.props.crime.offense : ""}</h4>
             <h4>Offense Date: {this.props.crime ? this.props.crime.offense_date : ""}</h4>
             <h4>Offense Time: {this.props.crime ? this.props.crime.offense_time : ""}</h4>
-
-
           </Modal.Body>
         </Modal>
     );

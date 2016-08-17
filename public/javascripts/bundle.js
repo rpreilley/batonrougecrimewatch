@@ -21667,7 +21667,11 @@
 	          _react2.default.createElement(
 	            "form",
 	            { onSubmit: this._handleSearch.bind(this) },
-	            _react2.default.createElement("input", { type: "submit", value: "Search", className: "searchButton" })
+	            _react2.default.createElement(
+	              "button",
+	              { type: "submit", value: "Search", className: "btn btn-secondary searchButton" },
+	              "Search"
+	            )
 	          )
 	        )
 	      );
@@ -24559,7 +24563,7 @@
 	      return _react2.default.createElement(
 	        "div",
 	        null,
-	        _react2.default.createElement("i", { onClick: this._handleClick.bind(this), className: "fa fa-map-marker fa", "aria-hidden": "true" })
+	        _react2.default.createElement("i", { onClick: this._handleClick.bind(this), className: "fa fa-map-marker fa 2x", "aria-hidden": "true" })
 	      );
 	    }
 	  }]);
@@ -24614,10 +24618,6 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      // The above console.log shows the crime object that has a geolocation with a coordinates key with the lat and lng at index positions 0 and 1.
-	
-	      // In the blank space of the h4 elements, I put { this.props.crime ? this.props.crime.geolocation.coordinates[0] : ""} to print out the lng but throwing an error.
-	      // If its showing in the console log above why wont it print out in the modal??
 	      return _react2.default.createElement(
 	        _Modal2.default,
 	        { show: this.props.showModal, onHide: this.close.bind(this) },
@@ -24626,7 +24626,7 @@
 	          { closeButton: true },
 	          _react2.default.createElement(
 	            _Modal2.default.Title,
-	            null,
+	            { className: 'modalBody' },
 	            'Crime Information'
 	          )
 	        ),

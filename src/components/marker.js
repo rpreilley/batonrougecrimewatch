@@ -11,7 +11,7 @@ class Marker extends React.Component {
   render(){
     return(
       <div>
-       <i onClick={this._handleClick.bind(this)} className="fa fa-map-marker fa" aria-hidden="true"></i>
+       <i onClick={this._handleClick.bind(this)} className="fa fa-map-marker fa 2x" aria-hidden="true"></i>
       </div>
     );
   }

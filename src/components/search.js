@@ -34,7 +34,7 @@ class Search extends React.Component {
         </div>
         <div>
           <form onSubmit={this._handleSearch.bind(this)}>
-            <input type="submit" value="Search" className="searchButton"/>
+            <button type="submit" value="Search" className="btn btn-secondary searchButton">Search</button>
           </form>
         </div>
       </div>
