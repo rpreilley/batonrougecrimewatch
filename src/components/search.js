@@ -9,7 +9,6 @@ class Search extends React.Component {
   _handleSearch(event) {
     event.preventDefault();
     this.props.search(this.refs.chosenCrime.value);
-    this.props.clear();
   }
   render(){
     return(
