@@ -10,6 +10,10 @@ class CrimeModal extends React.Component {
   }
 
   render() {
+    // The above console.log shows the crime object that has a geolocation with a coordinates key with the lat and lng at index positions 0 and 1.
+
+    // In the blank space of the h4 elements, I put { this.props.crime ? this.props.crime.geolocation.coordinates[0] : ""} to print out the lng but throwing an error.
+    // If its showing in the console log above why wont it print out in the modal??
     return (
       <Modal show={this.props.showModal} onHide={this.close.bind(this)}>
           <Modal.Header closeButton>
@@ -18,10 +22,12 @@ class CrimeModal extends React.Component {
           <Modal.Body>
             <h4>Crime Type: {this.props.crime ? this.props.crime.crime : ""}</h4>
             <h4>Attempted or Committed: {this.props.crime ? this.props.crime.a_c : ""}</h4>
-            <h4>Details: {this.props.crime ? this.props.crime.offense_desc : ""}</h4>
+            <h4>Offense Description: {this.props.crime ? this.props.crime.offense_desc : ""}</h4>
             <h4>Address: {this.props.crime ? this.props.crime.address : ""}</h4>
             <h4>City: {this.props.crime ? this.props.crime.city : ""}</h4>
             <h4>State: {this.props.crime ? this.props.crime.state : ""}</h4>
+            <h4>Latitude: {this.props.crime.geolocation ? this.props.crime.geolocation.coordinates[1] : ""}</h4>
+            <h4>Longitude: {this.props.crime.geolocation ? this.props.crime.geolocation.coordinates[0] : ""}</h4>
             <h4>Complete District: {this.props.crime ? this.props.crime.complete_district : ""}</h4>
             <h4>File Number: {this.props.crime ? this.props.crime.file_number : ""}</h4>
             <h4>Offense: {this.props.crime ? this.props.crime.offense : ""}</h4>

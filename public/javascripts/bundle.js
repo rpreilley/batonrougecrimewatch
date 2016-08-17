@@ -21494,7 +21494,7 @@
 	    value: function _fetchCrime(crimeType) {
 	      var _this2 = this;
 	
-	      fetch('https://data.brla.gov/resource/5rji-ddnu.json?$limit=1000&$where=geolocation%20IS%20NOT%20NULL&crime=' + crimeType).then(function (response) {
+	      fetch('https://data.brla.gov/resource/5rji-ddnu.json?$limit=1500&$where=geolocation%20IS%20NOT%20NULL&crime=' + crimeType).then(function (response) {
 	        return response.json();
 	      }).then(function (results) {
 	        _this2.setState({
@@ -21568,17 +21568,17 @@
 	        { className: "searchSection" },
 	        _react2.default.createElement(
 	          "div",
-	          null,
+	          { className: "crimeList" },
 	          "      ",
 	          _react2.default.createElement(
-	            "p",
+	            "h3",
 	            null,
-	            "Type of Crime "
+	            "Select Crime"
 	          ),
 	          "        ",
 	          _react2.default.createElement(
 	            "select",
-	            { ref: "chosenCrime", defaultValue: 0 },
+	            { ref: "chosenCrime", className: "chosenCrime" },
 	            "        ",
 	            _react2.default.createElement(
 	              "option",
@@ -21663,7 +21663,7 @@
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "search" },
+	          null,
 	          _react2.default.createElement(
 	            "form",
 	            { onSubmit: this._handleSearch.bind(this) },
@@ -21760,7 +21760,7 @@
 	            center: { lat: this.props.defaultLat, lng: this.props.defaultLng } },
 	          this.props.crimes.map(function (crime, i) {
 	            if (crime.geolocation) {
-	              return _react2.default.createElement(_marker2.default, { crime: crime, lat: crime.geolocation.coordinates[1], selectCrime: _this2.selectCrime.bind(_this2), lng: crime.geolocation.coordinates[0], key: i });
+	              return _react2.default.createElement(_marker2.default, { crime: crime, lat: crime.geolocation.coordinates[1], lng: crime.geolocation.coordinates[0], selectCrime: _this2.selectCrime.bind(_this2), key: i });
 	            }
 	          })
 	        ),
@@ -24614,6 +24614,10 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      // The above console.log shows the crime object that has a geolocation with a coordinates key with the lat and lng at index positions 0 and 1.
+	
+	      // In the blank space of the h4 elements, I put { this.props.crime ? this.props.crime.geolocation.coordinates[0] : ""} to print out the lng but throwing an error.
+	      // If its showing in the console log above why wont it print out in the modal??
 	      return _react2.default.createElement(
 	        _Modal2.default,
 	        { show: this.props.showModal, onHide: this.close.bind(this) },
@@ -24644,7 +24648,7 @@
 	          _react2.default.createElement(
 	            'h4',
 	            null,
-	            'Details: ',
+	            'Offense Description: ',
 	            this.props.crime ? this.props.crime.offense_desc : ""
 	          ),
 	          _react2.default.createElement(
@@ -24664,6 +24668,18 @@
 	            null,
 	            'State: ',
 	            this.props.crime ? this.props.crime.state : ""
+	          ),
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            'Latitude: ',
+	            this.props.crime.geolocation ? this.props.crime.geolocation.coordinates[1] : ""
+	          ),
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            'Longitude: ',
+	            this.props.crime.geolocation ? this.props.crime.geolocation.coordinates[0] : ""
 	          ),
 	          _react2.default.createElement(
 	            'h4',

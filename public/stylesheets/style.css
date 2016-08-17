@@ -33,25 +33,37 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.header {
+  font-size: 4em;
+  text-align: center;
+  padding-top: 2%
+}
+
 #map {
   height: 600px;
   width: 90%;
-  border-color: black;
-  border-radius: 2px;
-  border-width: 2px;
-  border-style: solid;
+  margin: 0 auto;
+  border: 2px solid black;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
 }
 
-/*.marker {
-background-color: white;
-height: 20px;
-width: 20px;
-}*/
+.searchSection {
+  text-align: center;
+}
+
+.searchButton {
+  margin: 1%;
+  color: blue;
+}
+
+.chosenCrime {
+  margin-top: 1%;
+  margin-right: 2%;
+}
 
 .mapContainer {
-  margin: 5% 10%;
+  margin: 0 10% 5% 10%;
 }
 
 .fa {
@@ -60,17 +72,4 @@ width: 20px;
 
 .fa:hover {
   color: red;
-}
-
-.list {
-  float: right;
-  height: 400px;
-  width: 45%;
-  text-align: center;
-  border-color: black;
-  border-radius: 2px;
-  border-width: 2px;
-  border-style: solid;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
 }

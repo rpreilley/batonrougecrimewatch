@@ -13,9 +13,9 @@ class Search extends React.Component {
   render(){
     return(
       <div className="searchSection">
-        <div>
-          <p>Type of Crime </p>
-            <select ref="chosenCrime" defaultValue={0}>
+        <div className="crimeList">
+          <h3>Select Crime</h3>
+            <select ref="chosenCrime" className="chosenCrime">
               <option value="ASSAULT">Assault</option>
               <option value="BATTERY">Battery</option>
               <option value="CRIMINAL DAMAGE TO PROPERTY">Criminal Damage to Property</option>
@@ -32,9 +32,9 @@ class Search extends React.Component {
               <option value="OTHER">Other</option>
             </select>
         </div>
-        <div className="search">
+        <div>
           <form onSubmit={this._handleSearch.bind(this)}>
-          <input type="submit" value="Search" className="searchButton"/>
+            <input type="submit" value="Search" className="searchButton"/>
           </form>
         </div>
       </div>

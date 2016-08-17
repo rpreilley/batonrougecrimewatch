@@ -30,7 +30,7 @@ class RenderMap extends React.Component {
         center={ {lat: this.props.defaultLat, lng: this.props.defaultLng} }>
         { this.props.crimes.map((crime, i) => {
           if (crime.geolocation) {
-            return (<Marker crime={crime} lat={crime.geolocation.coordinates[1]} selectCrime={this.selectCrime.bind(this)} lng={crime.geolocation.coordinates[0]} key={i}></Marker>)
+            return (<Marker crime={crime} lat={crime.geolocation.coordinates[1]} lng={crime.geolocation.coordinates[0]} selectCrime={this.selectCrime.bind(this)} key={i}></Marker>)
           }
         })}
       </GoogleMap>
