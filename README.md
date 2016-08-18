@@ -9,7 +9,7 @@
 <h3>How I solved it:</h3>
 <p>I used the Google Maps API along with the Socrata Open Data API for the City of Baton Rouge to build this app. Any crime that included a geolocation with a lat and lng is placed on the map and clicking on a specific marker gives that crimes details, as far as the address, complete district, what type of crime it was, if it was attempted or committed, etc.<p>
 
-<a href="#">App Name</a>
+<a href="https://batonrougecrimewatch.herokuapp.com/">Baton Rouge Crime Watch</a>
 
 <h3>Technologies I used:</h3>
 
