@@ -45,7 +45,8 @@ You can click out of the modal or click the "x" to close the modal and continue 
 
 <h3>Unsolved problems:</h3> 
     
-<p>I wanted to give users the ability to search within a specific date range with a start and end date drop down menu. This way they could get more specific for the results.</p>
-<p>I would end up having a user login and maybe introduce Firebase as a database layer so users can save specific events to a list if they needed to re-visit them for details later on.</p>
+<p>Give users the ability to search within a specific date range with a start and end date option. This way users could get more specific for the results.</p>
+<p>Have a user login and maybe introduce Firebase as a database layer so users can save specific events to a list if they needed to re-visit them for details later on.</p>
+<p>Have modal email button generate crime details in body of email.</p>
 
     
