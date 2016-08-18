@@ -28,6 +28,7 @@ class CrimeModal extends React.Component {
             <h4>Offense: {this.props.crime ? this.props.crime.offense : ""}</h4>
             <h4>Offense Date: {this.props.crime ? this.props.crime.offense_date : ""}</h4>
             <h4>Offense Time: {this.props.crime ? this.props.crime.offense_time : ""}</h4>
+            <button type="button" className="btn btn-secondary searchButton"><a href="mailto:email@example.com?subject=Crime Information&body=">Email Crime Information</a></button>
           </Modal.Body>
         </Modal>
     );
