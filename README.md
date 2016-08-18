@@ -7,21 +7,22 @@
 
 
 <h3>How I solved it:</h3>
-<p>I used the Google Maps API along with the Socrata Open Data API for the City of Baton Rouge to build this app. Any crime that included a geolocation with a lat and lng is placed on the map and clicking on a specific marker gives that crimes details, as far as the address, complete district, what type of crime it was, if it was attempted or committed, etc.
+<p>I used the Google Maps API along with the Socrata Open Data API for the City of Baton Rouge to build this app. Any crime that included a geolocation with a lat and lng is placed on the map and clicking on a specific marker gives that crimes details, as far as the address, complete district, what type of crime it was, if it was attempted or committed, etc.<p>
 
 <a href="#">App Name</a>
 
 <h3>Technologies I used:</h3>
 
 This app was built using the following technologies:
-    -Express.js
-    -Node.js
-    -React.js 
-    -Bootstrap
-    -Google Maps API
-    -Socrata Open Data API for the City of Baton Rouge
-    -Webpack
 
+<h4>-Express.js</h4>
+<h4>-Node.js</h4>
+<h4>-React.js </h4>
+<h4>-Bootstrap</h4>
+<h4>-Google Maps API</h4>
+<h4>-Socrata Open Data API for the City of Baton Rouge</h4>
+<h4>-Webpack</h4>
+    
 <h3>Instructions on how to use app:</h3>
 
 Select a crime from the drop down menu that you want to place markers on the map for and hit "Search".
