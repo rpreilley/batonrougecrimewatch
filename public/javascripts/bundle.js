@@ -24636,6 +24636,10 @@
 	    value: function close() {
 	      this.props.onHide();
 	    }
+	    // For the modal below, rendering the specific data on lines within the modal for each marker when one is clicked //
+	    // If the props of the crime exist it shows in the modal, otherwise it shows nothing. //
+	    // Did this because some crime objects dont have all the data you need, so without that piece it would break //
+	
 	  }, {
 	    key: 'render',
 	    value: function render() {
@@ -24654,7 +24658,6 @@
 	        _react2.default.createElement(
 	          _Modal2.default.Body,
 	          null,
-	          '// Rendering the specific data on lines within the modal for each marker when one is clicked // If the props of the crime exist it shows in the modal, otherwise it shows nothing. // Did this because some crime objects dont have all the data you need, so without that piece it would break',
 	          _react2.default.createElement(
 	            'h4',
 	            null,
@@ -30252,7 +30255,7 @@
 /* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
+	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
 	 * @overview es6-promise - a tiny implementation of Promises/A+.
 	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
 	 * @license   Licensed under MIT license

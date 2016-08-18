@@ -8,6 +8,9 @@ class CrimeModal extends React.Component {
   close() {
     this.props.onHide();
   }
+            // For the modal below, rendering the specific data on lines within the modal for each marker when one is clicked //
+            // If the props of the crime exist it shows in the modal, otherwise it shows nothing. //
+            // Did this because some crime objects dont have all the data you need, so without that piece it would break //
   render() {
     return (
       <Modal show={this.props.showModal} onHide={this.close.bind(this)}>
@@ -15,9 +18,6 @@ class CrimeModal extends React.Component {
             <Modal.Title className="modalBody">Crime Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            // Rendering the specific data on lines within the modal for each marker when one is clicked
-            // If the props of the crime exist it shows in the modal, otherwise it shows nothing.
-            // Did this because some crime objects dont have all the data you need, so without that piece it would break
             <h4>Crime Type: {this.props.crime ? this.props.crime.crime : ""}</h4>
             <h4>Attempted or Committed: {this.props.crime ? this.props.crime.a_c : ""}</h4>
             <h4>Offense Description: {this.props.crime ? this.props.crime.offense_desc : ""}</h4>
