@@ -39,6 +39,19 @@ body {
   padding-top: 2%
 }
 
+@-webkit-keyframes blueRed {
+  0% { color: blue; }
+  50% { color: blue; }
+  51% { color: red; }
+  100% { color: red; }
+}
+
+.eye {
+    -webkit-animation-name: blueRed;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+}
+
 #map {
   height: 500px;
   width: 90%;
@@ -74,10 +87,10 @@ body {
   margin: 0 10% 5% 10%;
 }
 
-.fa {
+.fa-map-marker {
   color: blue;
 }
 
-.fa:hover {
+.fa-map-marker:hover {
   color: red;
 }
