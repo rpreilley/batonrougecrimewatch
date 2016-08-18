@@ -39,9 +39,9 @@ class RenderMap extends React.Component {
           }
         })}
       </GoogleMap>
-      // Sending the selectedCrime and onHide methods to the CrimeModal component, as well as the state of showModal //
       <CrimeModal crime={this.state.selectedCrime} showModal={this.state.showModal} onHide={this.onHide.bind(this)}/>
     </div>
+    // Sending the selectedCrime and onHide methods to the CrimeModal component, as well as the state of showModal //
   )
 
   }
