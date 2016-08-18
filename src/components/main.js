@@ -13,7 +13,7 @@ class Main extends React.Component {
     }
   }
   _fetchCrime(crimeType) {
-    fetch(`https://data.brla.gov/resource/5rji-ddnu.json?$limit=500&$where=geolocation%20IS%20NOT%20NULL&crime=${crimeType}`)
+    fetch(`https://data.brla.gov/resource/5rji-ddnu.json?$limit=1000&$where=geolocation%20IS%20NOT%20NULL&crime=${crimeType}`)
       .then((response) => {
         return response.json()
       })
