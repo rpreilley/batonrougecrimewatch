@@ -35,6 +35,7 @@ class Main extends React.Component {
       })
   }
   render(){
+    // Sending fetchCity method to the search component to be used with the value of dropdown menu
     return(
       <div className="mapContainer">
         <Search search={this._fetchCrime.bind(this)} />
