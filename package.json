@@ -29,4 +29,10 @@
     "babel-preset-react": "^6.11.1",
     "webpack": "^1.13.1"
   }
+  "babelrc",
+  "version": "1.0.0",
+  "babel":
+    "es2015"
+  }
+}
 }
