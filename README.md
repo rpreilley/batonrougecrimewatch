@@ -1,5 +1,7 @@
 <a href="http://imgur.com/nUOIt3o"><img src="http://i.imgur.com/nUOIt3o.png" title="source: imgur.com" /></a>
 
+<a href="https://batonrougecrimewatch.herokuapp.com/">Baton Rouge Crime Watch</a>
+
 <h3>Problem to solve:</h3> 
 <p>The problem I wanted to solve was the issue of city police station technology. It is outdated and can make it difficult to get information you may need quickly. I wanted people who use the app to be able to see populated areas of the city for specific crimes and get details about each one.
 
@@ -8,8 +10,6 @@
 
 <h3>How I solved it:</h3>
 <p>I used the Google Maps API along with the Socrata Open Data API for the City of Baton Rouge to build this app. Any crime that included a geolocation with a lat and lng is placed on the map and clicking on a specific marker gives that crimes details, as far as the address, complete district, what type of crime it was, if it was attempted or committed, etc.<p>
-
-<a href="https://batonrougecrimewatch.herokuapp.com/">Baton Rouge Crime Watch</a>
 
 <h3>Technologies I used:</h3>
 
