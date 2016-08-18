@@ -1,12 +1,14 @@
-<h1> App Name </h1>
+<h1> Baton Rouge Crime Watch </h1>
 
-<a href="http://imgur.com/bwFbzLW"><img src="http://i.imgur.com/bwFbzLW.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/nUOIt3o"><img src="http://i.imgur.com/nUOIt3o.png" title="source: imgur.com" /></a>
 
 <h3>Problem to solve:</h3> 
+<p>The problem I wanted to solve was the issue of city police station technology. It is outdated and can make it difficult to get information you may need quickly. I wanted people who use the app to be able to see populated areas of the city for specific crimes and get details about each one.
+
+<p> While building the app I realized it could be valuable to families moving to cities who want to decide which part of town would be best to live in. The Socrata API was built out for a lot of major cities with the same API endpoints, so with a few changes in the code you can make the app work for cities other than Baton Rouge.
 
 
-
-<h3>How we solved it:</h3>
+<h3>How I solved it:</h3>
 
 
 
@@ -34,15 +36,15 @@ You can click out of the modal or click the "x" to close the modal and continue 
 
 <h3>Wireframe:</h3>
 
-<a href="http://imgur.com/MhGQA0D"><img src="http://i.imgur.com/MhGQA0D.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/HfrpuHf"><img src="http://i.imgur.com/HfrpuHf.png" title="source: imgur.com" /></a>
 
 <h3>User Stories:</h3>
 
-<a href="http://imgur.com/8T1f6L6"><img src="http://i.imgur.com/8T1f6L6.jpg" title="source: imgur.com" /></a>
+<a href="http://imgur.com/YJq3PDp"><img src="http://i.imgur.com/YJq3PDp.png" title="source: imgur.com" /></a>
 
 <h3>Component Mapping:</h3> 
 
-<a href="http://imgur.com/0EBCqQB"><img src="http://i.imgur.com/0EBCqQB.jpg" title="source: imgur.com" /></a>
+<a href="#"><img src="#" title="source: imgur.com" /></a>
 
 <h3>Unsolved problems:</h3> 
     

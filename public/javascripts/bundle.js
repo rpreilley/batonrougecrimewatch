@@ -21494,7 +21494,7 @@
 	    value: function _fetchCrime(crimeType) {
 	      var _this2 = this;
 	
-	      fetch('https://data.brla.gov/resource/5rji-ddnu.json?$limit=1500&$where=geolocation%20IS%20NOT%20NULL&crime=' + crimeType).then(function (response) {
+	      fetch('https://data.brla.gov/resource/5rji-ddnu.json?$limit=2000&$where=geolocation%20IS%20NOT%20NULL&crime=' + crimeType).then(function (response) {
 	        return response.json();
 	      }).then(function (results) {
 	        _this2.setState({
