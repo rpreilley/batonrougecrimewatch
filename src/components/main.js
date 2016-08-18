@@ -20,7 +20,6 @@ class Main extends React.Component {
       .then((response) => {
         Pace.stop()
         return response.json()
-        Pace.restart
       })
       .then((results) => {
         this.setState({

@@ -21502,7 +21502,6 @@
 	      fetch('https://data.brla.gov/resource/5rji-ddnu.json?$limit=2000&$where=geolocation%20IS%20NOT%20NULL&crime=' + crimeType).then(function (response) {
 	        Pace.stop();
 	        return response.json();
-	        Pace.restart;
 	      }).then(function (results) {
 	        _this2.setState({
 	          crimes: results
@@ -30237,7 +30236,7 @@
 /* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
+	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
 	 * @overview es6-promise - a tiny implementation of Promises/A+.
 	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
 	 * @license   Licensed under MIT license
