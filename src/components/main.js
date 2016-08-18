@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './search';
 import RenderMap from './map';
+import fetch from 'whatwg-fetch';
 
 class Main extends React.Component {
   constructor(props){
