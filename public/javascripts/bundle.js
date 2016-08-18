@@ -21498,8 +21498,11 @@
 	    value: function _fetchCrime(crimeType) {
 	      var _this2 = this;
 	
+	      Pace.restart();
 	      fetch('https://data.brla.gov/resource/5rji-ddnu.json?$limit=1000&$where=geolocation%20IS%20NOT%20NULL&crime=' + crimeType).then(function (response) {
+	        Pace.stop();
 	        return response.json();
+	        Pace.restart;
 	      }).then(function (results) {
 	        _this2.setState({
 	          crimes: results
@@ -24567,7 +24570,7 @@
 	      return _react2.default.createElement(
 	        "div",
 	        null,
-	        _react2.default.createElement("i", { onClick: this._handleClick.bind(this), className: "fa fa-map-marker fa 2x", "aria-hidden": "true" })
+	        _react2.default.createElement("i", { onClick: this._handleClick.bind(this), className: "fa fa-map-marker fa 4x", "aria-hidden": "true" })
 	      );
 	    }
 	  }]);
