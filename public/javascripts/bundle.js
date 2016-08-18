@@ -21482,6 +21482,7 @@
 	  function Main(props) {
 	    _classCallCheck(this, Main);
 	
+	    // The initial state.
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Main).call(this, props));
 	
 	    _this.state = {
@@ -21498,11 +21499,14 @@
 	    value: function _fetchCrime(crimeType) {
 	      var _this2 = this;
 	
+	      // The Pace method below will render the "progress bar" when the fetch is initiated
 	      Pace.restart();
 	      fetch('https://data.brla.gov/resource/5rji-ddnu.json?$limit=2000&$where=geolocation%20IS%20NOT%20NULL&crime=' + crimeType).then(function (response) {
+	        // Pace method below once the data is gathered stops the "progress bar"
 	        Pace.stop();
 	        return response.json();
 	      }).then(function (results) {
+	        // Setting the state of crimes to be the results of the fetch. This will be used as props in other components
 	        _this2.setState({
 	          crimes: results
 	        });
@@ -21563,7 +21567,9 @@
 	  _createClass(Search, [{
 	    key: "_handleSearch",
 	    value: function _handleSearch(event) {
+	      // Prevents refresh of page
 	      event.preventDefault();
+	      // Sends the value of the dropdown menu to be used in the API call as the "crimeType"
 	      this.props.search(this.refs.chosenCrime.value);
 	    }
 	  }, {
@@ -21731,6 +21737,7 @@
 	  function RenderMap(props) {
 	    _classCallCheck(this, RenderMap);
 	
+	    // Initial state of one selected crime as an empty object as well as making the value of showModal false at first
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RenderMap).call(this, props));
 	
 	    _this.state = {
@@ -21739,6 +21746,8 @@
 	    };
 	    return _this;
 	  }
+	  // Setting state for selected crime and moving the value of showModal to true
+	
 	
 	  _createClass(RenderMap, [{
 	    key: 'selectCrime',
@@ -21748,6 +21757,8 @@
 	        showModal: true
 	      });
 	    }
+	    // Resets the state of showModal to false so it will be removed from page
+	
 	  }, {
 	    key: 'onHide',
 	    value: function onHide() {
@@ -21764,16 +21775,19 @@
 	        'div',
 	        { id: 'map' },
 	        _react2.default.createElement(
-	          _googleMapReact2.default,
-	          {
-	            zoom: this.props.zoom,
+	          _googleMapReact2.default
+	          // The zoon and center below are using the state that was set on the main component and using props to render the map to the center of Baton Rouge
+	          ,
+	          { zoom: this.props.zoom,
 	            center: { lat: this.props.defaultLat, lng: this.props.defaultLng } },
+	          '// Iterating through the "crimes" object to get lat and lng of each result for the markers',
 	          this.props.crimes.map(function (crime, i) {
 	            if (crime.geolocation) {
 	              return _react2.default.createElement(_marker2.default, { crime: crime, lat: crime.geolocation.coordinates[1], lng: crime.geolocation.coordinates[0], selectCrime: _this2.selectCrime.bind(_this2), key: i });
 	            }
 	          })
 	        ),
+	        '// Sending the selectedCrime and onHide methods to the CrimeModal component, as well as the state of showModal',
 	        _react2.default.createElement(_crimeModal2.default, { crime: this.state.selectedCrime, showModal: this.state.showModal, onHide: this.onHide.bind(this) })
 	      );
 	    }
@@ -24561,6 +24575,7 @@
 	  _createClass(Marker, [{
 	    key: "_handleClick",
 	    value: function _handleClick(event) {
+	      // On click of a marker it evokes the selectCrime method that was passed to this component from the Map component as state.
 	      this.props.selectCrime(this.props.crime);
 	    }
 	  }, {
@@ -24639,6 +24654,7 @@
 	        _react2.default.createElement(
 	          _Modal2.default.Body,
 	          null,
+	          '// Rendering the specific data on lines within the modal for each marker when one is clicked',
 	          _react2.default.createElement(
 	            'h4',
 	            null,
@@ -30236,7 +30252,7 @@
 /* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
+	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
 	 * @overview es6-promise - a tiny implementation of Promises/A+.
 	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
 	 * @license   Licensed under MIT license

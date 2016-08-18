@@ -7,6 +7,7 @@ import 'whatwg-fetch';
 class Main extends React.Component {
   constructor(props){
     super(props);
+    // The initial state.
     this.state = {
       crimes: [],
       defaultLat: 30.4583,
@@ -15,13 +16,16 @@ class Main extends React.Component {
     }
   }
   _fetchCrime(crimeType) {
+    // The Pace method below will render the "progress bar" when the fetch is initiated
     Pace.restart()
     fetch(`https://data.brla.gov/resource/5rji-ddnu.json?$limit=2000&$where=geolocation%20IS%20NOT%20NULL&crime=${crimeType}`)
       .then((response) => {
+        // Pace method below once the data is gathered stops the "progress bar"
         Pace.stop()
         return response.json()
       })
       .then((results) => {
+        // Setting the state of crimes to be the results of the fetch. This will be used as props in other components
         this.setState({
           crimes: results
         });

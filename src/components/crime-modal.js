@@ -15,6 +15,7 @@ class CrimeModal extends React.Component {
             <Modal.Title className="modalBody">Crime Information</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            // Rendering the specific data on lines within the modal for each marker when one is clicked
             <h4>Crime Type: {this.props.crime ? this.props.crime.crime : ""}</h4>
             <h4>Attempted or Committed: {this.props.crime ? this.props.crime.a_c : ""}</h4>
             <h4>Offense Description: {this.props.crime ? this.props.crime.offense_desc : ""}</h4>

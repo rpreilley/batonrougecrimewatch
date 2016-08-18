@@ -6,6 +6,7 @@ class Marker extends React.Component {
     super(props);
   }
   _handleClick(event){
+    // On click of a marker it evokes the selectCrime method that was passed to this component from the Map component as state.
     this.props.selectCrime(this.props.crime);
   }
   render(){

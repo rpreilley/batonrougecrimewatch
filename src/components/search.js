@@ -7,7 +7,9 @@ class Search extends React.Component {
     super(props);
   }
   _handleSearch(event) {
+    // Prevents refresh of page
     event.preventDefault();
+    // Sends the value of the dropdown menu to be used in the API call as the "crimeType"
     this.props.search(this.refs.chosenCrime.value);
   }
   render(){
