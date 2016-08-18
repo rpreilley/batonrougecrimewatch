@@ -1,6 +1,6 @@
 <a href="http://imgur.com/nUOIt3o"><img src="http://i.imgur.com/nUOIt3o.png" title="source: imgur.com" /></a>
 
-<a href="https://batonrougecrimewatch.herokuapp.com/">Baton Rouge Crime Watch</a>
+<a target="_blank" href="https://batonrougecrimewatch.herokuapp.com/">Baton Rouge Crime Watch</a>
 
 <h3>Problem to solve:</h3> 
 <p>The problem I wanted to solve was the issue of city police station technology. It is outdated and can make it difficult to get information you may need quickly. I wanted users to be able to see populated areas of the city for specific crimes and get details about each one.
