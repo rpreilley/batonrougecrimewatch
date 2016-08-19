@@ -18,6 +18,7 @@ This app was built using the following technologies:
 <h4>-Express.js</h4>
 <h4>-Node.js</h4>
 <h4>-React.js </h4>
+<h4>-Pace.js</h4>
 <h4>-Bootstrap</h4>
 <h4>-Google Maps API</h4>
 <h4>-Socrata Open Data API for the City of Baton Rouge</h4>
