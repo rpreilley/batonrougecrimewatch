@@ -31,6 +31,8 @@ Select a crime from the drop down menu that you want to place markers on the map
 Click on a marker to open a modal and get more information about that specific crime.
 You can click out of the modal or click the "x" to close the modal and continue to click others or search for a different crime type to re-render a fresh map with fresh markers.
 
+Results are currently capped at 2000.
+
 <h3>Wireframe:</h3>
 
 <a href="http://imgur.com/HfrpuHf"><img src="http://i.imgur.com/HfrpuHf.png" title="source: imgur.com" /></a>
