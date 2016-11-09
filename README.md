@@ -23,6 +23,8 @@ This app was built using the following technologies:
 <h4>-Google Maps API</h4>
 <h4>-Socrata Open Data API for the City of Baton Rouge</h4>
 <h4>-Webpack</h4>
+
+<p>If you want to run the app, fork/clone the repo, change directories into the baton rouge crime watch directory, run "npm install", then type "nodemon" to start a local server. After that, open a new tab in terminal and type in "webpack --watch". Launch localhost:3000 in your browser and you should be good to go!</p>
     
 <h3>Instructions on how to use app:</h3>
 
